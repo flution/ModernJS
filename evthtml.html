@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "button" value="버튼" id = 'btnclick'> 
+    <div id = 'result'></div>
+    <script>
+        // function first()
+        // {
+        //     alert('첫 번째 메시지');
+        // }
+        
+        // // btnclick.onclick = () =>
+        // // {
+        // //     alert("버튼 클릭");
+        // // }
+        
+        // // 이벤트 리스너로 여러 이벤트 하나로 바인딩.
+        // bntclick.addEventListener('click', first);
+        // bntclick.addEventListener('click', () => {
+        //     alert('버튼 클릭')
+        // });
+
+        // bntclick.removeEventListener('click', first);
+
+        // function msg()
+        // {
+        //     alert(event.type);
+        //     alert(event.clientX);
+        //     alert(event.clientY);
+        // }
+            
+        //객체 리터럴 방식 사용.
+        // let obj = {
+        //     handleEvent(event)
+        //     {
+        //         alert(event.type);
+        //         alert(event.clientX);
+        //         alert(event.clientY);
+        //     }
+        // }
+
+        // btnclick.addEventListener('click', obj);
+
+        class Mouse{
+            handleEvent(event)
+            {
+                switch(event.type)
+                {
+                    case 'mousedown':
+                        result.innerHTML = "마우스 버튼 누름";
+                        break;
+                    case 'mouseup':
+                        result.innerHTML = "마우스 버튼 놓음"
+                        break;
+                }
+            }
+        }
+
+        var mouse = new Mouse();
+
+        btnclick.addEventListener('mousedown', mouse);
+        btnclick.addEventListener('mouseup', mouse);
+
+    </script>
+</body>
+</html>
